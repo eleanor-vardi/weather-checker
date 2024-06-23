@@ -7,7 +7,7 @@ This project integrates with the GeoNames API to fetch timezone data and with an
 It also use a csv downloaded from https://simplemaps.com/data/world-cities
 
 ## How to Use
-
+https://weather-checker-dhszprku2w5ckuwhvnt3am.streamlit.app/
 
 1. **Clone the Repository:**
 

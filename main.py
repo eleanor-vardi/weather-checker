@@ -20,14 +20,21 @@ def format_time(time_str):
     formatted_time = time_obj.strftime('%A, %B %d, %Y %I:%M %p')
     return formatted_time
 
+
+def celcius_2_farenheit(celcius):
+    return celcius * 9/5 + 32
+   # return round(celcius, 3)
+
+
 df = pn.read_csv('data/worldcities.csv')
 cities = df['city']
 st.title("My First Weather Checker App")
 city = st.selectbox('Pick a city', cities)
-r = requests.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=' + api_key)
+r = requests.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=' + api_key + '&units=metric')
 x = r.json()
 y = x['main']
-st.write('The weather in ', city, 'is ', x['weather'][0]['description'], '. temperature is: ', y['temp'])
+st.write('The weather in ', city, 'is ', x['weather'][0]['description'], '. temperature is: ',
+         y['temp'], '°C/', celcius_2_farenheit(y['temp']), '°F')
 lat = x['coord']['lat']
 lon = x['coord']['lon']
 current_time = get_timezone(lat, lon)
