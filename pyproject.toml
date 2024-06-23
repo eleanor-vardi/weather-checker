@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "weather-checker"
+version = "0.1.0"
+description = ""
+authors = ["eleanor-vardi <eleanor.vardi@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.9.7 || >3.9.7,<4.0"
+streamlit = "^1.36.0"
+requests = "^2.32.3"
+datetime = "^5.5"
+pandas = "^2.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
