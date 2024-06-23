@@ -22,8 +22,7 @@ def format_time(time_str):
 
 
 def celcius_2_farenheit(celcius):
-    return celcius * 9/5 + 32
-   # return round(celcius, 3)
+    return round(celcius * 9/5 + 32,2)
 
 
 df = pn.read_csv('data/worldcities.csv')
